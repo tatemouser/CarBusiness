@@ -1,13 +1,32 @@
+/* COLORS
+MAIN 24242A
+ACCENT 2E2E35
+RED ACCENT E46270
+*/
+
 * {
     box-sizing: border-box;
 }
 
 body {
+    background-color: #24242A;
+    color: white;
     font-family: Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    overflow-x: hidden;
+}
+
+.title-container, .option-blocks-container {
+    margin: 10% auto;
+    max-width: 1200px; /* or whatever maximum width you prefer */
 }
 
 /*---------header----------*/
@@ -17,7 +36,7 @@ header {
     top: 0;
     width: 100%;
     height: 70px;
-    background-color: white;
+    background-color: #2E2E35;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -47,10 +66,11 @@ header {
 .nav-buttons a {
     padding: 8px 12px;
     font-size: 1.1rem;
-    color: black;
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s;
+    color: white;
+    text-decoration: none;
 }
 
 /* Dropdown styles */
@@ -68,7 +88,7 @@ header {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
+    background-color: #2E2E35;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -77,7 +97,7 @@ header {
 }
 
 .dropdown-content a {
-    color: black;
+    color: white;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
@@ -93,11 +113,11 @@ header {
 
 /*------------------ title ------------------ */
 .title-container {
+    margin-top: 50px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     padding: 2rem;
-    background-color: #f8f8f8;
 }
 
 .title-content {
@@ -107,13 +127,15 @@ header {
 
 .title-image {
     flex: 1;
-    min-width: 300px;
+    min-width: 350px;
+    max-width: 50%;
 }
 
 .title-image img {
     width: 100%;
-    height: auto;
+    height: 500px;
     object-fit: cover;
+    border-radius: 20px;
 }
 
 h1 {
@@ -134,15 +156,16 @@ h1 {
 .cta-button {
     padding: 0.75rem 1.5rem;
     font-size: 1rem;
-    background-color: #007bff;
+    background-color: #E46270;
     color: white;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s;
+    border-radius: 20px;
 }
 
 .cta-button:hover {
-    background-color: #0056b3;
+    background-color: #c0525d;
 }
 
 
@@ -157,6 +180,8 @@ h1 {
     margin-bottom: 2rem;
     background-color: #ffffff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    overflow: hidden;
 }
 
 .option-block.reverse {
@@ -168,14 +193,30 @@ h1 {
     min-width: 300px;
 }
 
+.block-image {
+    overflow: hidden;
+}
+
 .block-image img {
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
 }
 
 .block-content {
     padding: 2rem;
+}
+
+/* For non-reversed blocks */
+.option-block:not(.reverse) .block-image {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+/* For reversed blocks */
+.option-block.reverse .block-image {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 
 /*------------------ FOOTER ------------------ */
@@ -227,6 +268,14 @@ footer {
 
 
 @media (max-width: 768px) {
+    .container {
+        padding: 0 10px;
+    }
+    
+    .title-container, .option-blocks-container {
+        margin: 20% auto;
+    }
+
 /*---------header----------*/
     .desktop-button {
         display: none;
@@ -238,17 +287,22 @@ footer {
 
 /*---------title----------*/
     .title-container {
-        flex-direction: column;
-        padding: 1rem;
+        flex-direction: column-reverse;
     }
 
     .title-content {
         padding-right: 0;
-        margin-bottom: 1rem;
+        margin-top: 1rem;
     }
 
     .title-image {
-        min-width: 100%;
+        width: 100%;
+        min-width: auto;
+        max-width: 100%;
+    }
+
+    .title-image img {
+        height: 200px;
     }
 
     h1 {
@@ -256,16 +310,14 @@ footer {
     }
 
     .subtitle {
-        font-size: 1.2rem;
+        font-size: 1.25rem;
     }
 
 /*---------options----------*/
-    .option-blocks-container {
-        padding: 1rem;
-    }
-
     .option-block, .option-block.reverse {
         flex-direction: column;
+        border-radius: 20px;
+        overflow: hidden;
     }
 
     .block-image, .block-content {
@@ -273,13 +325,25 @@ footer {
     }
 
     .block-image {
-        order: -1;
+        border-radius: 0;
+    }
+
+    .block-image img {
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        display: block; /* This removes any potential space below the image */
     }
 
     .block-content {
         padding: 1rem;
     }
 
+    /* Reset any specific border-radius for non-mobile views */
+    .option-block:not(.reverse) .block-image,
+    .option-block.reverse .block-image {
+        border-radius: 0;
+    }
+    
 /*---------footer----------*/
     .footer-content {
         flex-direction: column;
