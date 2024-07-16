@@ -1,0 +1,140 @@
+.form-page {
+    min-height: 100vh;
+    background-color: #24242A;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center the form vertically */
+}
+
+.form-container {
+    margin-bottom: 80px;
+    margin-top: 80px;
+    background-color: #2E2E35;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+}
+
+.form-container h2 {
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    color: #E46270;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+}
+
+.form-group label.required::after {
+    content: " *";
+    color: #E46270;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #3A3A42;
+    border-radius: 10px;
+    background-color: #24242A;
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #E46270;
+    outline: none;
+}
+
+.form-container button {
+    width: 100%;
+    padding: 1rem;
+    background-color: #E46270;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-container button:hover {
+    background-color: #c0525d;
+}
+
+.popup-overlay {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(36, 36, 42, 0.8);
+    z-index: 1000;
+}
+
+.popup-content {
+    background: #2E2E35;
+    color: #ffffff;
+    border-radius: 20px;
+    padding: 2rem;
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+}
+
+.popup-content p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.popup-content button {
+    padding: 0.75rem 1.5rem;
+    background-color: #E46270;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.popup-content button:hover {
+    background-color: #c0525d;
+}
+
+@media (max-width: 768px) {
+    .form-page {
+        padding: 2rem 1rem;
+    }
+
+    .form-container {
+        padding: 1.5rem;
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+
+    .form-container h2 {
+        font-size: 2rem;
+    }
+}
