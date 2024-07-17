@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TODO</title>
     <link href="/Assets/css/styles.css" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Merriweather:wght@300;400&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <div class="logo">
-            <img src="/Assets/images/logo2.png" alt="Company Logo">
+            <img src="/Assets/downloads/carlogo.png" alt="Company Logo">
         </div>        
         <nav class="nav-buttons">
             <a href="" class="desktop-button">About Us</a>
@@ -31,7 +31,9 @@
                 <h1>Professional Car Detailing</h1>
                 <p class="subtitle">Keep your car looking its best. We offer professional interior and exterior auto detailing, as well as deluxe detailing packages that will get your car looking as good as new.</p>
                 <p class="description">Experience premium detailing services tailored to your car's needs</p>
-                <button class="cta-button">Book Now</button>
+                <nav>
+                    <a href="book.html" class="cta-button">BOOK NOW</a>
+                  </nav>
             </div>
             <div class="title-image">
                 <img src="/Assets/downloads/title-img.jpg" alt="Shiny detailed car">
@@ -46,7 +48,7 @@
                 <div class="block-content">
                     <h2>Ceramic Coating</h2>
                     <p>Ceramic coating protects your car from paint damage, harmful UV rays, chemical stains, light scratches, bug guts, tree sap, bird droppings, winter salt and more!</p>
-                    <button class="cta-button">Learn More</button>
+                    <a href="book.html" class="cta-button">Learn More</a>
                 </div>
             </div>
         
@@ -57,7 +59,7 @@
                 <div class="block-content">
                     <h2>Interior Detailing</h2>
                     <p>Our interior detailing services include: door panels, the dashboard, the center console, and leather being cleaned and dressed, the inside windows being cleaned, vaccuming, and the headliner being spot cleaned.</p>
-                    <button class="cta-button">Learn More</button>
+                    <a href="book.html" class="cta-button">Learn More</a>
                 </div>
             </div>
         
@@ -68,7 +70,7 @@
                 <div class="block-content">
                     <h2>Exterior Detailing</h2>
                     <p>Our exterior detailing services include: wash & dry, tire & wheel wash, wheel wells & engine bay cleaned and dressed, gas cap cleaned, windows & mirrors washed, exterior plastic dressed, and paint correction wax & buff. We also offer ceramic coating services to better protect your paint.</p>
-                    <button class="cta-button">Learn More</button>
+                    <a href="book.html" class="cta-button">Learn More</a>
                 </div>
             </div>
 
@@ -79,63 +81,64 @@
                 <div class="block-content">
                     <h2>Full Detailing Packages</h2>
                     <p>Deluxe detailing packages are also available! Possible services include: headlight restoration, pet hair removal, and interior disinfecting. Contact us today to learn more!</p>
-                    <button class="cta-button">Learn More</button>
+                    <a href="book.html" class="cta-button">Learn More</a>
                 </div>
             </div>
         </div>
 
         <div class="past-work-container">
             <h2>Our Past Work</h2>
-            <div class="work-blocks">
-                <div class="work-block">
+                <div class="work-blocks">
+                    <div class="work-block">
                     <h3>Interior Detailing</h3>
                     <div class="slider">
                         <img src="/Assets/downloads/option-img-2.jpg" alt="Interior Detailing 1">
                         <img src="/Assets/downloads/option-img-1.jpg" alt="Interior Detailing 2">
                         <img src="/Assets/downloads/option-img-3.jpg" alt="Interior Detailing 3">
                     </div>
+                </div>
+                <div class="work-block">
+                    <h3>Exterior Detailing</h3>
+                    <div class="slider">
+                        <img src="/Assets/downloads/option-img-1.jpg" alt="Exterior Detailing 1">
+                        <img src="/Assets/downloads/option-img-2.jpg" alt="Exterior Detailing 2">
+                        <img src="/Assets/downloads/option-img-3.jpg" alt="Exterior Detailing 3">
                     </div>
-                    <div class="work-block">
-                        <h3>Exterior Detailing</h3>
-                        <div class="slider">
-                            <img src="/Assets/downloads/option-img-1.jpg" alt="Exterior Detailing 1">
-                            <img src="/Assets/downloads/option-img-2.jpg" alt="Exterior Detailing 2">
-                            <img src="/Assets/downloads/option-img-3.jpg" alt="Exterior Detailing 3">
-                        </div>
+                </div>
+                <div class="work-block">
+                    <h3>Paint Correction</h3>
+                    <div class="slider">
+                        <img src="/Assets/downloads/option-img-3.jpg" alt="Paint Correction 1">
+                        <img src="/Assets/downloads/option-img-2.jpg" alt="Paint Correction 2">
+                        <img src="/Assets/downloads/option-img-1.jpg" alt="Paint Correction 3">
                     </div>
-                    <div class="work-block">
-                        <h3>Paint Correction</h3>
-                        <div class="slider">
-                            <img src="/Assets/downloads/option-img-3.jpg" alt="Paint Correction 1">
-                            <img src="/Assets/downloads/option-img-2.jpg" alt="Paint Correction 2">
-                            <img src="/Assets/downloads/option-img-1.jpg" alt="Paint Correction 3">
-                        </div>
-                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="reviews-container">
-
-        </div>
 
         <div class="contact-container">
             <div class="contact-content">
                 <h2>Ready to Revive Your Ride?</h2>
                 <p>Book your premium detailing service today and experience the difference.</p>
-                <button class="contact-button">Book Now</button>
+                <div class="button-group">
+                    <button class="cta-button" id="popupTrigger">SERVICE AREA</button>
+                    <a href="book.html" class="cta-button">Book Now</a>
+                </div>
             </div>
             <div class="contact-decoration">
                 <div class="decoration-circle"></div>
                 <div class="decoration-line"></div>
             </div>
         </div>
-
-        <div class="map-container">
-
+        
+        <div id="popup" class="popup">
+            <div class="popup-content">
+                <span class="close-btn" id="closePopup">&times;</span>
+                <h2>Our Service Area</h2>
+                <img src="/Assets/downloads/map3.png" alt="Service Area Map">
+            </div>
         </div>
-
-
-
 
         <div class="footer-container"> 
             <footer>
@@ -162,5 +165,20 @@
             </footer>
         </div>
     </main>
+    <script>
+        document.getElementById('popupTrigger').addEventListener('click', function() {
+        document.getElementById('popup').style.display = 'flex';
+        });
+
+        document.getElementById('closePopup').addEventListener('click', function() {
+        document.getElementById('popup').style.display = 'none';
+        });
+
+        window.addEventListener('click', function(event) {
+        if (event.target == document.getElementById('popup')) {
+            document.getElementById('popup').style.display = 'none';
+        }
+        });
+    </script>
 </body>
 </html>
